@@ -5,6 +5,18 @@ class AllExpenses extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      padding: EdgeInsets.all(20),
+      decoration: ShapeDecoration(
+        color: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadiusGeometry.circular(12),
+        ),
+      ),
+      child: const Column(children: [
+          
+        ],
+      ),
+    );
   }
 }
