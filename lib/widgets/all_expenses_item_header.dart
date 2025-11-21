@@ -21,7 +21,8 @@ class AllExpensesItemHeader extends StatelessWidget {
           ),
           child: SvgPicture.asset(image),
         ),
-        const Spacer(),
+        // const Spacer(),
+        SizedBox(width: 12), // Instead of Spacer
         Transform.rotate(
           angle: -1.57079633 * 2,
           child: const Icon(Icons.arrow_back_ios_new_outlined),
