@@ -3,28 +3,36 @@ import 'package:responsive_dash_board/models/all_expenses_item_model.dart';
 import 'package:responsive_dash_board/utils/app_images.dart';
 import 'package:responsive_dash_board/widgets/all_expenses_item.dart';
 
-class AllExpensesItemListView extends StatelessWidget {
+class AllExpensesItemListView extends StatefulWidget {
   const AllExpensesItemListView({super.key});
-  static final items = [
-    AllExpensesItemModel(
+
+  @override
+  State<AllExpensesItemListView> createState() =>
+      _AllExpensesItemListViewState();
+}
+
+class _AllExpensesItemListViewState extends State<AllExpensesItemListView> {
+  final items = [
+    const AllExpensesItemModel(
       image: Assets.imagesBalance,
       title: "Balance",
       date: "April 2022",
       price: r'$20,129',
     ),
-    AllExpensesItemModel(
+    const AllExpensesItemModel(
       image: Assets.imagesIncome,
       title: "Income",
       date: "April 2022",
       price: r'$20,129',
     ),
-    AllExpensesItemModel(
+    const AllExpensesItemModel(
       image: Assets.imagesExpenses,
       title: "Expenses",
       date: "April 2022",
       price: r'$20,129',
     ),
   ];
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -36,8 +44,17 @@ class AllExpensesItemListView extends StatelessWidget {
             // add horizontal padding to the middle item only ....
             padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12 : 0),
             child: GestureDetector(
-              onTap: () {},
-              child: AllExpensesItem(itemModel: item, isSelected: false),
+              onTap: () {
+                if (selectedIndex != index) {
+                  setState(() {
+                    selectedIndex = index;
+                  });
+                }
+              },
+              child: AllExpensesItem(
+                itemModel: item,
+                isSelected: selectedIndex == index,
+              ),
             ),
           ),
         );
