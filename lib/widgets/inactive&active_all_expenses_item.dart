@@ -45,8 +45,12 @@ class ActiveAllExpensesItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       decoration: ShapeDecoration(
+        color: Color(0xff4db7f2),
         shape: RoundedRectangleBorder(
-          side: const BorderSide(width: 1, color: Color(0xfff1f1f1)),
+          side: const BorderSide(
+            width: 1,
+            color: Color.fromARGB(255, 241, 241, 241),
+          ),
           borderRadius: BorderRadius.circular(12),
         ),
       ),
@@ -54,13 +58,32 @@ class ActiveAllExpensesItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AllExpensesItemHeader(image: itemModel.image),
+          AllExpensesItemHeader(
+            arrowColor: Colors.white,
+            image: itemModel.image,
+            imageColor: Colors.white,
+            imageBackgroundC: const Color.fromARGB(
+              75,
+              255,
+              255,
+              255,
+            ).withValues(),
+          ),
           const SizedBox(height: 34),
-          Text(itemModel.title, style: AppStyles.styleMedium16),
+          Text(
+            itemModel.title,
+            style: AppStyles.styleMedium16.apply(color: Colors.white),
+          ),
           const SizedBox(height: 8),
-          Text(itemModel.date, style: AppStyles.styleRegular14),
+          Text(
+            itemModel.date,
+            style: AppStyles.styleMedium14.apply(color: Color(0xfffafafa)),
+          ),
           const SizedBox(height: 16),
-          Text(itemModel.price, style: AppStyles.styleSemiBold20),
+          Text(
+            itemModel.price,
+            style: AppStyles.styleSemiBold20.apply(color: Colors.white),
+          ),
         ],
       ),
     );

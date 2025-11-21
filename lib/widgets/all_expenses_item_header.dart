@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AllExpensesItemHeader extends StatelessWidget {
-  const AllExpensesItemHeader({super.key, required this.image});
+  const AllExpensesItemHeader({
+    super.key,
+    required this.image,
+    this.imageBackgroundC,
+    this.imageColor,
+    this.arrowColor,
+  });
   final String image;
+  final Color? imageBackgroundC, imageColor, arrowColor;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -16,16 +23,26 @@ class AllExpensesItemHeader extends StatelessWidget {
           ), // or put SvgPicture.asset(image) in Center Widget...
 
           decoration: ShapeDecoration(
-            color: Color(0xFFFAFAFA),
+            color: imageBackgroundC ?? Color(0xFFFAFAFA),
             shape: OvalBorder(),
           ),
-          child: SvgPicture.asset(image),
+          child: SvgPicture.asset(
+            image,
+            colorFilter: ColorFilter.mode(
+              imageColor ?? const Color(0xff4eb7f2),
+              BlendMode.srcIn,
+            ),
+          ),
         ),
         const Spacer(),
         // SizedBox(width: 12), // Instead of Spacer
         Transform.rotate(
           angle: -1.57079633 * 2,
-          child: const Icon(Icons.arrow_back_ios_new_outlined),
+          child: Icon(
+            Icons.arrow_back_ios_new_outlined,
+            color: arrowColor ?? Color(0xff064060),
+            // 1end solution : color: imageColor == null ? Color(0xff064060) : Colors.white,
+          ),
         ),
       ],
     );
