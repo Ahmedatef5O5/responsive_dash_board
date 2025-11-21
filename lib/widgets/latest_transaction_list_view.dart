@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/models/user_info_model.dart';
 import 'package:responsive_dash_board/utils/app_images.dart';
@@ -24,17 +26,30 @@ class LatestTransactionListView extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 80,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          return IntrinsicWidth(
-            child: UserInfoListtile(userInfoModel: items[index]),
-          );
-        },
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: items
+            .map(
+              ((e) =>
+                  IntrinsicWidth(child: UserInfoListtile(userInfoModel: e))),
+            )
+            .toList(),
       ),
     );
+
+    // another option by guess what for height !
+    // SizedBox(
+    //   height: 80,
+    //   child: ListView.builder(
+    //     scrollDirection: Axis.horizontal,
+    //     itemCount: items.length,
+    //     itemBuilder: (context, index) {
+    //       return IntrinsicWidth(
+    //         child: UserInfoListtile(userInfoModel: items[index]),
+    //       );
+    //     },
+    //   ),
+    // );
   }
 }
