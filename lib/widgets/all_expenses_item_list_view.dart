@@ -33,8 +33,9 @@ class AllExpensesItemListView extends StatelessWidget {
         var item = e.value;
         return Expanded(
           child: Padding(
+            // add horizontal padding to the middle item only ....
             padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12 : 0),
-            child: AllExpensesItem(itemModel: item),
+            child: AllExpensesItem(itemModel: item, isSelected: false),
           ),
         );
       }).toList(),
