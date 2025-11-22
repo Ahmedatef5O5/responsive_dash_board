@@ -26,22 +26,22 @@ class QuickInvoiceForm extends StatelessWidget {
             ),
           ],
         ),
-        // SizedBox(height: 24),
-        // Row(
-        //   children: [
-        //     Expanded(
-        //       child: TitleTextField(
-        //         title: 'Item Name',
-        //         hint: "Type Customer Name",
-        //       ),
-        //     ),
-        //     SizedBox(width: 16),
-        //     Expanded(
-        //       child: TitleTextField(title: 'Item mount', hint: "USD"),
-        //     ),
-        //   ],
-        // ),
-        SizedBox(height: 16),
+        SizedBox(height: 24),
+        Row(
+          children: [
+            Expanded(
+              child: TitleTextField(
+                title: 'Item Name',
+                hint: "Type Customer Name",
+              ),
+            ),
+            SizedBox(width: 16),
+            Expanded(
+              child: TitleTextField(title: 'Item mount', hint: "USD"),
+            ),
+          ],
+        ),
+        SizedBox(height: 24),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -52,7 +52,7 @@ class QuickInvoiceForm extends StatelessWidget {
                 txtColor: const Color(0xff4eb7f2),
               ),
             ),
-            SizedBox(width: 16),
+            SizedBox(width: 24),
             Expanded(
               child: CustomButton(
                 btnColor: const Color(0xff4eb7f2),

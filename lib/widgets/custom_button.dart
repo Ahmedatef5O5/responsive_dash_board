@@ -16,6 +16,7 @@ class CustomButton extends StatelessWidget {
       style: TextButton.styleFrom(
         overlayColor: Colors.transparent,
         splashFactory: NoSplash.splashFactory,
+        elevation: 0,
       ),
       onPressed: () {},
       child: Container(
