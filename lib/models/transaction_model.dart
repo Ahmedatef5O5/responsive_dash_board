@@ -1,10 +1,10 @@
 class TransactionModel {
-  final String title, date, amount;
+  final String title, subTitle, amount;
   final bool isWithdrawal;
 
   const TransactionModel({
     required this.title,
-    required this.date,
+    required this.subTitle,
     required this.amount,
     required this.isWithdrawal,
   });
