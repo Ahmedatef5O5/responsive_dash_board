@@ -19,7 +19,7 @@ class TransactionItem extends StatelessWidget {
           style: AppStyles.styleBold16.copyWith(color: const Color(0xff064060)),
         ),
         subtitle: Text(
-          transactionModel.subTitle,
+          transactionModel.date,
           style: AppStyles.styleRegular16.copyWith(
             color: const Color(0xffaaaaaa),
           ),
