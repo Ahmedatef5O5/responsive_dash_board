@@ -25,6 +25,7 @@ class _IncomeChartState extends State<IncomeChart> {
           setState(() {});
         },
       ),
+      centerSpaceRadius: 35,
       sectionsSpace: 0,
       sections: [
         PieChartSectionData(
