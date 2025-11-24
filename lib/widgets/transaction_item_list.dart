@@ -27,13 +27,10 @@ class TransactionItemList extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      scrollDirection: Axis.vertical,
-      shrinkWrap: true,
-      itemCount: items.length,
-      itemBuilder: (context, index) {
-        return TransactionItem(transactionModel: items[index]);
-      },
+    return Column(
+      children: items.map(((e) {
+        return TransactionItem(transactionModel: e);
+      })).toList(),
     );
   }
 }
@@ -43,4 +40,16 @@ class TransactionItemList extends StatelessWidget {
 //       children: List.generate(items.length, ((e) {
 //         return TransactionItem(transactionModel: items[e]);
 //       })),
+//     );
+ 
+
+
+// ListView does not match with CustomScrollView...
+//  ListView.builder(
+//       scrollDirection: Axis.vertical,
+//       shrinkWrap: true,
+//       itemCount: items.length,
+//       itemBuilder: (context, index) {
+//         return TransactionItem(transactionModel: items[index]);
+//       },
 //     );
