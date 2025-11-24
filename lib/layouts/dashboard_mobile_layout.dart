@@ -1,0 +1,27 @@
+import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/widgets/income_section.dart';
+
+import '../widgets/all_expenses_and_quick_invoice_section.dart';
+import '../widgets/my_cards_and_transaction_history.dart';
+
+class DashboardMobileLayout extends StatelessWidget {
+  const DashboardMobileLayout({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          AllExpensesAndQuickInvoiceSection(),
+          SizedBox(height: 24),
+          MyCardsAndTransactionHistory(),
+
+          SizedBox(height: 24),
+          IncomeSection(),
+
+          SizedBox(height: 24),
+        ],
+      ),
+    );
+  }
+}
