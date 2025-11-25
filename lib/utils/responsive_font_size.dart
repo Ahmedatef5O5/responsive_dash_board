@@ -20,7 +20,7 @@ double getScaleFactor(context) {
 
   double width = MediaQuery.sizeOf(context).width;
   if (width < SizeConfig.tablet) {
-    return width / 650;
+    return width / 900;
   } else if (width < SizeConfig.desktop) {
     return (width / 1200).clamp(0.9, 1.1);
   } else {
