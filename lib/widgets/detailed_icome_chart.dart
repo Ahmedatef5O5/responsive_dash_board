@@ -26,7 +26,7 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
           setState(() {});
         },
       ),
-      centerSpaceRadius: 70,
+      centerSpaceRadius: 60,
       sectionsSpace: 0,
       sections: [
         PieChartSectionData(
@@ -43,7 +43,7 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
         PieChartSectionData(
           radius: activeIndex == 1 ? 50 : 40,
           value: 25,
-          titlePositionPercentageOffset: activeIndex == 1 ? 2.4 : null,
+          titlePositionPercentageOffset: activeIndex == 1 ? .5 : null,
           title: activeIndex == 1 ? "Design product" : '25%',
           titleStyle: AppStyles.styleMedium16(
             context,

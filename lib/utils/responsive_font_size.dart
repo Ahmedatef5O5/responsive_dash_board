@@ -22,7 +22,7 @@ double getScaleFactor(context) {
   if (width < SizeConfig.tablet) {
     return width / 900;
   } else if (width < SizeConfig.desktop) {
-    return (width / 1200).clamp(0.9, 1.1);
+    return (width / 1000).clamp(0.9, 1.1);
   } else {
     return width / 1920;
   }
