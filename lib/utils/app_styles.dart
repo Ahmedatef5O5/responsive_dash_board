@@ -1,104 +1,81 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/utils/size_config.dart';
+import 'package:responsive_dash_board/utils/responsive_font_size.dart';
 
 abstract class AppStyles {
-  static const TextStyle styleRegular16 = TextStyle(
+  static TextStyle styleRegular16 = TextStyle(
     color: Color(0xff064060),
-    fontSize: 16,
+    fontSize: getResponsiveFontSize(fontSize: 16),
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.w400,
   );
 
-  static const TextStyle styleBold16 = TextStyle(
+  static TextStyle styleBold16 = TextStyle(
     color: Color(0xff4eb7f2),
-    fontSize: 16,
+    fontSize: getResponsiveFontSize(fontSize: 16),
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.w700,
   );
 
-  static const TextStyle styleMedium14 = TextStyle(
+  static TextStyle styleMedium14 = TextStyle(
     color: Color(0xff064061),
-    fontSize: 14,
+    fontSize: getResponsiveFontSize(fontSize: 14),
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.w400,
   );
 
-  static const TextStyle styleMedium16 = TextStyle(
+  static TextStyle styleMedium16 = TextStyle(
     color: Color(0xff064061),
-    fontSize: 16,
+    fontSize: getResponsiveFontSize(fontSize: 16),
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.w500,
   );
 
-  static const TextStyle styleMedium20 = TextStyle(
+  static TextStyle styleMedium20 = TextStyle(
     color: Color(0xffffffff),
-    fontSize: 20,
+    fontSize: getResponsiveFontSize(fontSize: 20),
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.w500,
   );
 
-  static const TextStyle styleSemiBold16 = TextStyle(
+  static TextStyle styleSemiBold16 = TextStyle(
     color: Color(0xff064061),
-    fontSize: 16,
+    fontSize: getResponsiveFontSize(fontSize: 16),
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.w600,
   );
 
-  static const TextStyle styleSemiBold20 = TextStyle(
+  static TextStyle styleSemiBold20 = TextStyle(
     color: Color(0xff064061),
-    fontSize: 20,
+    fontSize: getResponsiveFontSize(fontSize: 16),
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.w600,
   );
 
-  static const TextStyle styleSemiBold24 = TextStyle(
+  static TextStyle styleSemiBold24 = TextStyle(
     color: Color(0xff064061),
-    fontSize: 24,
+    fontSize: getResponsiveFontSize(fontSize: 24),
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.w600,
   );
 
-  static const TextStyle styleRegular12 = TextStyle(
+  static TextStyle styleRegular12 = TextStyle(
     color: Color(0xff064061),
-    fontSize: 12,
+    fontSize: getResponsiveFontSize(fontSize: 12),
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.w400,
   );
 
-  static const TextStyle styleRegular14 = TextStyle(
+  static TextStyle styleRegular14 = TextStyle(
     color: Color(0xffaaaaaa),
-    fontSize: 14,
+    fontSize: getResponsiveFontSize(fontSize: 14),
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.w400,
   );
 
-  static const TextStyle styleSemiBold18 = TextStyle(
+  static TextStyle styleSemiBold18 = TextStyle(
     color: Color(0xff4eb7f2),
-    fontSize: 18,
+    fontSize: getResponsiveFontSize(fontSize: 18),
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.w600,
   );
-}
-
-// scale factor
-// responsive font size
-// (min , max) fontsize
-
-double getResponsiveFontSize(BuildContext context, double fontSize) {
-  double scaleFactor = getScaleFactor(context);
-  double responsiveFontSize = fontSize * scaleFactor;
-  double lowerLimit = fontSize * .8;
-  double upperLimit = fontSize * 1.2;
-  return responsiveFontSize.clamp(lowerLimit, upperLimit);
-}
-
-double getScaleFactor(BuildContext context) {
-  double width = MediaQuery.sizeOf(context).width;
-  if (width < SizeConfig.tablet) {
-    return width / 550;
-  } else if (width < SizeConfig.desktop) {
-    return width / 1000;
-  } else {
-    return width / 1920;
-  }
 }
