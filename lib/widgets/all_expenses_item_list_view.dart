@@ -40,9 +40,13 @@ class _AllExpensesItemListViewState extends State<AllExpensesItemListView> {
         int index = e.key;
         var item = e.value;
         return Expanded(
-          child: Padding(
+          child: Container(
             // add horizontal padding to the middle item only ....
-            padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12 : 0),
+            // using Container.margin instead of padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12 : 0),
+
+            // padding: Adds space inside the widget's borders.
+            // margin: Adds space outside the widget's borders (which is exactly what you want).
+            margin: EdgeInsets.symmetric(horizontal: index == 1 ? 4 : 0),
             child: GestureDetector(
               onTap: () {
                 if (selectedIndex != index) {
