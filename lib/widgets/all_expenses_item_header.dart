@@ -16,24 +16,25 @@ class AllExpensesItemHeader extends StatelessWidget {
     return Row(
       children: [
         Flexible(
-          child: AspectRatio(
-            aspectRatio: 1,
-            child: Container(
-              width: 60,
-              height: 60,
-              // padding: const EdgeInsets.all(14), this make SVG icons disappear..
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 60),
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: Container(
+                // padding: const EdgeInsets.all(14), this make SVG icons disappear..
 
-              //  instead of padding  put SvgPicture.asset(image) in Center Widget...
-              decoration: ShapeDecoration(
-                color: imageBackgroundC ?? Color(0xFFFAFAFA),
-                shape: OvalBorder(),
-              ),
-              child: Center(
-                child: SvgPicture.asset(
-                  image,
-                  colorFilter: ColorFilter.mode(
-                    imageColor ?? const Color(0xff4eb7f2),
-                    BlendMode.srcIn,
+                //  instead of padding  put SvgPicture.asset(image) in Center Widget...
+                decoration: ShapeDecoration(
+                  color: imageBackgroundC ?? Color(0xFFFAFAFA),
+                  shape: OvalBorder(),
+                ),
+                child: Center(
+                  child: SvgPicture.asset(
+                    image,
+                    colorFilter: ColorFilter.mode(
+                      imageColor ?? const Color(0xff4eb7f2),
+                      BlendMode.srcIn,
+                    ),
                   ),
                 ),
               ),
