@@ -123,22 +123,22 @@ responsive_dash_board/
   </tr>
   <tr>
     <td align="center">
-      <img src="screenshots/desktop.png" alt="Desktop Layout" width="420"/>
+      <img width="1280" height="671" alt="desktop_layout" src="https://github.com/user-attachments/assets/fbafd0e5-1aff-4bca-a60c-39fe0c55974f" />
       <br/><sub>Full two-column layout with persistent sidebar</sub>
     </td>
     <td align="center">
-      <img src="screenshots/tablet.png" alt="Tablet Layout" width="280"/>
+      <img width="1280" height="883" alt="tablet_layout" src="https://github.com/user-attachments/assets/c83f8f77-e0b7-4eb1-af75-d455783b4762" />
       <br/><sub>Sidebar + single-column scrollable content</sub>
     </td>
     <td align="center">
-      <img src="screenshots/mobile.png" alt="Mobile Layout" width="180"/>
+      <img width="384" height="694" alt="mobile_layout" src="https://github.com/user-attachments/assets/b3f3e65e-f07f-4450-b439-72a8ec068fae" />
       <br/><sub>Stacked vertical layout with hamburger drawer</sub>
     </td>
   </tr>
 </table>
-
+<!--
 > 📌 **Note:** Screenshots folder (`/screenshots`) not included in the repo yet. Run the app with `device_preview` enabled to preview all breakpoints in one window.
-
+-->
 ---
 
 ## 🛠️ Tech Stack
@@ -230,7 +230,7 @@ The following improvements are planned for future versions of FinDash:
 
 **Ahmed Atef**
 
-[![GitHub](https://img.shields.io/badge/GitHub-AhmedAtef-181717?style=for-the-badge&logo=github)](https://github.com/AbdElhameidKhaled)
+[![GitHub](https://img.shields.io/badge/GitHub-AhmedAtef-181717?style=for-the-badge&logo=github)](https://github.com/Ahmedatef5O5)
 
 </div>
 
