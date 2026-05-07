@@ -1,8 +1,7 @@
 <div align="center">
 
 # 💰 FinDash
-
-<img src="assets/banner.svg" alt="FinDash Banner" width="100%"/>
+<img width="3200" height="1000" alt="banner" src="https://github.com/user-attachments/assets/61da9a8d-5b3c-430e-80a1-94b01c58ee79" /> 
 
 <br/>
 
