@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:responsive_dash_board/utils/app_Styles.dart';
-import 'package:responsive_dash_board/utils/app_images.dart';
+import '../utils/app_images.dart';
+import '../utils/app_styles.dart';
 
 class MyCard extends StatelessWidget {
   const MyCard({super.key});
@@ -18,7 +18,7 @@ class MyCard extends StatelessWidget {
           ),
           color: Color(0xff4eb7f2),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadiusGeometry.circular(12),
+            borderRadius: BorderRadius.circular(12),
           ),
         ),
         child: Column(

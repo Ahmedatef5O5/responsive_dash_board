@@ -16,7 +16,7 @@ class IncomeSectionHeader extends StatelessWidget {
           decoration: ShapeDecoration(
             shape: RoundedRectangleBorder(
               side: const BorderSide(width: 1, color: Color(0xfff1f1f1)),
-              borderRadius: BorderRadiusGeometry.circular(12),
+              borderRadius: BorderRadius.circular(12),
             ),
           ),
           child: Row(

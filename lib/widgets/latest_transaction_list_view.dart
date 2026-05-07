@@ -1,7 +1,8 @@
+import 'package:finDashBoard/widgets/user_info_list_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/models/user_info_model.dart';
-import 'package:responsive_dash_board/utils/app_images.dart';
-import 'package:responsive_dash_board/widgets/user_info_list_tile.dart';
+
+import '../models/user_info_model.dart';
+import '../utils/app_images.dart';
 
 class LatestTransactionListView extends StatelessWidget {
   const LatestTransactionListView({super.key});
@@ -27,12 +28,14 @@ class LatestTransactionListView extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
-        children: items
-            .map(
-              ((e) =>
-                  IntrinsicWidth(child: UserInfoListtile(userInfoModel: e))),
-            )
-            .toList(),
+        children:
+            items
+                .map(
+                  ((e) => IntrinsicWidth(
+                    child: UserInfoListtile(userInfoModel: e),
+                  )),
+                )
+                .toList(),
       ),
     );
 

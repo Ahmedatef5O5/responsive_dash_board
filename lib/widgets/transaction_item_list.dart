@@ -1,6 +1,6 @@
+import 'package:finDashBoard/widgets/transaction_item.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/models/transaction_model.dart';
-import 'package:responsive_dash_board/widgets/transaction_item.dart';
+import '../models/transaction_model.dart';
 
 class TransactionItemList extends StatelessWidget {
   const TransactionItemList({super.key});
@@ -28,9 +28,10 @@ class TransactionItemList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: items.map(((e) {
-        return TransactionItem(transactionModel: e);
-      })).toList(),
+      children:
+          items.map(((e) {
+            return TransactionItem(transactionModel: e);
+          })).toList(),
     );
   }
 }

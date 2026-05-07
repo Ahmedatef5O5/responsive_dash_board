@@ -1,7 +1,7 @@
+import 'package:finDashBoard/widgets/transaction_history_header.dart';
+import 'package:finDashBoard/widgets/transaction_item_list.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/utils/app_styles.dart';
-import 'package:responsive_dash_board/widgets/transaction_history_header.dart';
-import 'package:responsive_dash_board/widgets/transaction_item_list.dart';
+import '../utils/app_styles.dart';
 
 class TransactionHistory extends StatelessWidget {
   const TransactionHistory({super.key});

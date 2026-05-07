@@ -1,7 +1,7 @@
+import 'package:finDashBoard/widgets/all_expenses_item.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/models/all_expenses_item_model.dart';
-import 'package:responsive_dash_board/utils/app_images.dart';
-import 'package:responsive_dash_board/widgets/all_expenses_item.dart';
+import '../models/all_expenses_item_model.dart';
+import '../utils/app_images.dart';
 
 class AllExpensesItemListView extends StatefulWidget {
   const AllExpensesItemListView({super.key});

@@ -1,6 +1,6 @@
+import 'package:finDashBoard/layouts/dashboard_mobile_layout.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/layouts/dashboard_mobile_layout.dart';
-import 'package:responsive_dash_board/widgets/custom_drawer.dart';
+import '../widgets/custom_drawer.dart';
 
 class DashboardTabletLayout extends StatelessWidget {
   const DashboardTabletLayout({super.key});

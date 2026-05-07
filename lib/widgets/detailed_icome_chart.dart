@@ -1,6 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/utils/app_styles.dart';
+import '../utils/app_styles.dart';
 
 class DetailedIncomeChart extends StatefulWidget {
   const DetailedIncomeChart({super.key});

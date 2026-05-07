@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/utils/app_styles.dart';
+import '../utils/app_styles.dart';
 
 class RangeOptions extends StatelessWidget {
   const RangeOptions({super.key});

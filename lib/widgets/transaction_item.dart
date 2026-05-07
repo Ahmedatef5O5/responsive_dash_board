@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/models/transaction_model.dart';
-import 'package:responsive_dash_board/utils/app_Styles.dart';
+import '../models/transaction_model.dart';
+import '../utils/app_styles.dart';
 
 class TransactionItem extends StatelessWidget {
   const TransactionItem({super.key, required this.transactionModel});
@@ -10,9 +10,7 @@ class TransactionItem extends StatelessWidget {
     return Card(
       elevation: 0,
       color: const Color(0xfffafafa),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadiusGeometry.circular(12),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: ListTile(
         title: Text(
           transactionModel.title,
@@ -29,9 +27,10 @@ class TransactionItem extends StatelessWidget {
         trailing: Text(
           transactionModel.amount,
           style: AppStyles.styleSemiBold20(context).copyWith(
-            color: transactionModel.isWithdrawal
-                ? const Color(0xfff3735e)
-                : const Color(0xff7cd87a),
+            color:
+                transactionModel.isWithdrawal
+                    ? const Color(0xfff3735e)
+                    : const Color(0xff7cd87a),
           ),
         ),
       ),

@@ -1,5 +1,5 @@
+import 'package:finDashBoard/utils/size_config.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/utils/size_config.dart';
 
 double getResponsiveFontSize(context, {required double fontSize}) {
   double scaleFactor = getScaleFactor(context);

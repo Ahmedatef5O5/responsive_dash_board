@@ -1,6 +1,7 @@
+import 'package:finDashBoard/models/item_details_model.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/models/item_details_model.dart';
-import 'package:responsive_dash_board/utils/app_styles.dart';
+
+import '../utils/app_styles.dart';
 
 class ItemDetails extends StatelessWidget {
   const ItemDetails({super.key, required this.itemDetailsModel});

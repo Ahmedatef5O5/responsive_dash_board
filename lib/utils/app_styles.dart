@@ -1,5 +1,5 @@
+import 'package:finDashBoard/utils/responsive_font_size.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/utils/responsive_font_size.dart';
 
 abstract class AppStyles {
   static TextStyle styleRegular16(context) {

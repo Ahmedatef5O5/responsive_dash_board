@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/models/drawer_item_model.dart';
-import 'package:responsive_dash_board/widgets/active&inActive_drawer_item.dart';
+import '../models/drawer_item_model.dart';
+import 'active_and_inActive_drawer_item.dart';
 
 class DrawerItem extends StatelessWidget {
   const DrawerItem({

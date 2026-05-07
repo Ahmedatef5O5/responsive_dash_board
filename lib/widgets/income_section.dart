@@ -1,8 +1,7 @@
+import 'package:finDashBoard/widgets/custom_background_container.dart';
+import 'package:finDashBoard/widgets/income_section_body.dart';
+import 'package:finDashBoard/widgets/income_section_header.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/widgets/custom_background_container.dart';
-import 'package:responsive_dash_board/widgets/income_section_body.dart';
-import 'package:responsive_dash_board/widgets/income_section_header.dart'
-    show IncomeSectionHeader;
 
 class IncomeSection extends StatelessWidget {
   const IncomeSection({super.key});

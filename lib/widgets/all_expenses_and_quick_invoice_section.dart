@@ -1,6 +1,6 @@
+import 'package:finDashBoard/widgets/all_expenses.dart';
+import 'package:finDashBoard/widgets/quick_invoice_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/widgets/all_expenses.dart';
-import 'package:responsive_dash_board/widgets/quick_invoice_widget.dart';
 
 class AllExpensesAndQuickInvoiceSection extends StatelessWidget {
   const AllExpensesAndQuickInvoiceSection({super.key});

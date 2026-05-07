@@ -1,15 +1,15 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:finDashBoard/views/dash_board_view.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/views/dash_board_view.dart';
 
 void main() {
   runApp(
-    DevicePreview(enabled: true, builder: (context) => const DashBoardApp()),
+    DevicePreview(enabled: true, builder: (context) => const FinDashApp()),
   );
 }
 
-class DashBoardApp extends StatelessWidget {
-  const DashBoardApp({super.key});
+class FinDashApp extends StatelessWidget {
+  const FinDashApp({super.key});
 
   // This widget is the root of your application.
   @override

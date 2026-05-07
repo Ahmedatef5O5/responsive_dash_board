@@ -1,7 +1,8 @@
+import 'package:finDashBoard/widgets/all_expenses_item_header.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/models/all_expenses_item_model.dart';
-import 'package:responsive_dash_board/utils/app_styles.dart';
-import 'package:responsive_dash_board/widgets/all_expenses_item_header.dart';
+
+import '../models/all_expenses_item_model.dart';
+import '../utils/app_styles.dart';
 
 class InActiveAllExpensesItem extends StatelessWidget {
   const InActiveAllExpensesItem({super.key, required this.itemModel});
@@ -80,12 +81,8 @@ class ActiveAllExpensesItem extends StatelessWidget {
             arrowColor: Colors.white,
             image: itemModel.image,
             imageColor: Colors.white,
-            imageBackgroundC: const Color.fromARGB(
-              75,
-              255,
-              255,
-              255,
-            ).withValues(),
+            imageBackgroundC:
+                const Color.fromARGB(75, 255, 255, 255).withValues(),
           ),
           const SizedBox(height: 34),
           FittedBox(
