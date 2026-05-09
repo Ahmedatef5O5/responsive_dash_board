@@ -1,5 +1,5 @@
 import 'package:device_preview/device_preview.dart';
-import 'package:finDashBoard/views/dash_board_view.dart';
+import 'package:finDashBoard/features/dashboard/presentation/views/dash_board_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
