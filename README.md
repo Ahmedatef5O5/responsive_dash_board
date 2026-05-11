@@ -137,8 +137,9 @@ responsive_dash_board/
 </table>
 <!--
 > 📌 **Note:** Screenshots folder (`/screenshots`) not included in the repo yet. Run the app with `device_preview` enabled to preview all breakpoints in one window.
--->
 ---
+-->
+
 
 ## 🛠️ Tech Stack
 
