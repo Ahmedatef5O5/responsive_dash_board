@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../features/dashboard/presentation/cubit/dashboard_cubit.dart';
+import '../../features/dashboard/presentation/cubit/dashboard_state.dart';
 import '../utils/app_styles.dart';
 
 class IncomeSectionHeader extends StatelessWidget {
@@ -20,14 +22,35 @@ class IncomeSectionHeader extends StatelessWidget {
             ),
           ),
           child: Row(
-            children: [
-              Text('Monthly', style: AppStyles.styleMedium16(context)),
-              SizedBox(width: 16),
-              Transform.rotate(
-                angle: -1.57079633,
-                child: const Icon(Icons.arrow_back_ios_new),
-              ),
-            ],
+            children:
+                ['Weekly', 'Monthly', 'Yearly'].map((period) {
+                  final isSelected =
+                      (context.watch<DashboardCubit>().state
+                              is DashboardSuccess)
+                          ? (context.read<DashboardCubit>().state
+                                      as DashboardSuccess)
+                                  .data
+                                  .selectedPeriod ==
+                              period
+                          : false;
+
+                  return Row(
+                    children: [
+                      Text(
+                        period,
+                        style: TextStyle(
+                          color: isSelected ? Colors.white : Colors.grey,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(width: 16),
+                      Transform.rotate(
+                        angle: -1.57079633,
+                        child: const Icon(Icons.arrow_back_ios_new),
+                      ),
+                    ],
+                  );
+                }).toList(),
           ),
         ),
       ],

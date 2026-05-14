@@ -1,103 +1,77 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:finDashBoard/features/dashboard/domain/models/all_expenses_item_model.dart';
-import 'package:finDashBoard/features/dashboard/domain/models/transaction_model.dart';
-import 'package:finDashBoard/features/dashboard/domain/models/user_info_model.dart';
+import '../../data/repositories/dashboard_repository_impl.dart';
 import '../../domain/models/dash_board_data.dart';
+import '../../domain/repositories/dashboard_repository.dart';
 import 'dashboard_state.dart';
 
 class DashboardCubit extends Cubit<DashboardState> {
-  DashboardCubit() : super(DashboardInitial());
+  final DashboardRepository _repository;
 
-  Future<void> loadDashboard() async {
+  DashboardCubit({DashboardRepository? repository})
+    : _repository = repository ?? DashboardRepositoryImpl(),
+      super(DashboardInitial());
+
+  Future<void> loadDashboard({String period = 'Weekly'}) async {
     emit(DashboardLoading());
 
     try {
-      await Future.delayed(const Duration(milliseconds: 800));
+      // Execute requests in parallel to save time
 
-      final data = _getMockData('Weekly');
-      emit(DashboardSuccess(data));
+      final results = await Future.wait([
+        _repository.getTransactions(period),
+        _repository.getExpenses(period),
+        _repository.getUserInfo(),
+        _repository.getSummary(period),
+      ]);
+
+      final summary = results[3] as Map<String, double>;
+
+      emit(
+        DashboardSuccess(
+          DashboardData(
+            selectedPeriod: period,
+            transactions: results[0] as dynamic,
+            expenses: results[1] as dynamic,
+            userInfoItems: results[2] as dynamic,
+            totalIncome: summary['income'] ?? 0,
+            totalExpenses: summary['expenses'] ?? 0,
+          ),
+        ),
+      );
     } catch (e) {
-      emit(DashboardError('failed load data ,try again later.'));
+      emit(DashboardError('failed load data : ${e.toString()}'));
     }
   }
 
   Future<void> changePeriod(String period) async {
-    final currentState = state;
-    if (currentState is DashboardSuccess) {
-      emit(DashboardLoading());
-      await Future.delayed(const Duration(milliseconds: 500));
-      final newData = _getMockData(period);
-      emit(DashboardSuccess(newData));
-    }
-  }
+    final previous =
+        state is DashboardSuccess ? (state as DashboardSuccess).data : null;
 
-  DashboardData _getMockData(String period) {
-    return DashboardData(
-      selectedPeriod: period,
-      totalIncome:
-          period == 'Weekly'
-              ? 12500
-              : period == 'Monthly'
-              ? 48000
-              : 576000,
-      totalExpenses:
-          period == 'Weekly'
-              ? 4200
-              : period == 'Monthly'
-              ? 17500
-              : 210000,
-      transactions: const [
-        TransactionModel(
-          title: 'Cash Withdrawal',
-          subTitle: '12 Apr, 2024',
-          amount: r'$20,129',
-          isWithdrawal: true,
+    emit(DashboardLoading());
+
+    try {
+      final results = await Future.wait([
+        _repository.getTransactions(period),
+        _repository.getExpenses(period),
+        _repository.getSummary(period),
+      ]);
+
+      final summary = results[2] as Map<String, double>;
+
+      emit(
+        DashboardSuccess(
+          DashboardData(
+            selectedPeriod: period,
+            transactions: results[0] as dynamic,
+            expenses: results[1] as dynamic,
+            userInfoItems: previous?.userInfoItems ?? [],
+            totalIncome: summary['income'] ?? 0,
+            totalExpenses: summary['expenses'] ?? 0,
+          ),
         ),
-        TransactionModel(
-          title: 'Landing Page Project',
-          subTitle: '10 Apr, 2024',
-          amount: r'$8,500',
-          isWithdrawal: false,
-        ),
-        TransactionModel(
-          title: 'Juni Mobile App Project',
-          subTitle: '8 Apr, 2024',
-          amount: r'$15,000',
-          isWithdrawal: false,
-        ),
-      ],
-      expenses: const [
-        AllExpensesItemModel(
-          image: 'assets/images/expense1.svg',
-          title: 'Food & Drinks',
-          date: 'Apr 2024',
-          price: r'$1,200',
-        ),
-        AllExpensesItemModel(
-          image: 'assets/images/expense2.svg',
-          title: 'Transport',
-          date: 'Apr 2024',
-          price: r'$450',
-        ),
-        AllExpensesItemModel(
-          image: 'assets/images/expense3.svg',
-          title: 'Entertainment',
-          date: 'Apr 2024',
-          price: r'$800',
-        ),
-      ],
-      userInfoItems: const [
-        UserInfoModel(
-          image: 'assets/icons/user.svg',
-          title: 'Ahmed Hassan',
-          subTitle: 'ahmed@example.com',
-        ),
-        UserInfoModel(
-          image: 'assets/icons/wallet.svg',
-          title: 'Main Account',
-          subTitle: '**** **** 4291',
-        ),
-      ],
-    );
+      );
+    } catch (e) {
+      emit(DashboardError('failed change period : ${e.toString()}'));
+    }
   }
 }
