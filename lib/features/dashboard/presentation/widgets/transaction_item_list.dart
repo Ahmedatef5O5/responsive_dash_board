@@ -1,5 +1,8 @@
+import 'package:finDashBoard/features/dashboard/presentation/cubit/dashboard_cubit.dart';
+import 'package:finDashBoard/features/dashboard/presentation/cubit/dashboard_state.dart';
 import 'package:finDashBoard/features/dashboard/presentation/widgets/transaction_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../domain/models/transaction_model.dart';
 
 class TransactionItemList extends StatelessWidget {
@@ -27,30 +30,15 @@ class TransactionItemList extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
+    final state = context.watch<DashboardCubit>().state;
+    if (state is! DashboardSuccess) return const SizedBox();
+    final transactions = state.data.transactions;
+
     return Column(
       children:
-          items.map(((e) {
+          transactions.map(((e) {
             return TransactionItem(transactionModel: e);
           })).toList(),
     );
   }
 }
-
-// another solution...
-// Column(
-//       children: List.generate(items.length, ((e) {
-//         return TransactionItem(transactionModel: items[e]);
-//       })),
-//     );
- 
-
-
-// ListView does not match with CustomScrollView...
-//  ListView.builder(
-//       scrollDirection: Axis.vertical,
-//       shrinkWrap: true,
-//       itemCount: items.length,
-//       itemBuilder: (context, index) {
-//         return TransactionItem(transactionModel: items[index]);
-//       },
-//     );

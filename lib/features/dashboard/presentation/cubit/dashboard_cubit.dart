@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:finDashBoard/features/dashboard/domain/models/all_expenses_item_model.dart';
 import 'package:finDashBoard/features/dashboard/domain/models/transaction_model.dart';
 import 'package:finDashBoard/features/dashboard/domain/models/user_info_model.dart';
+import '../../domain/models/dash_board_data.dart';
 import 'dashboard_state.dart';
 
 class DashboardCubit extends Cubit<DashboardState> {
