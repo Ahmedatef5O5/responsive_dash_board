@@ -1,4 +1,4 @@
-import '../../domain/models/dash_board_data.dart';
+import '../../../domain/models/dash_board_data.dart';
 
 sealed class DashboardState {}
 
