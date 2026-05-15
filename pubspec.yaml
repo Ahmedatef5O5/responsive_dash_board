@@ -6,9 +6,11 @@ version: 1.0.0+1
 
 environment:
   # sdk: ^3.9.2
-  sdk: ">=3.7.0 <4.0.0"
+  sdk: ">=3.0.0 <4.0.0"
+
 
 dependencies:
+  csv: ^6.0.0
   cupertino_icons: ^1.0.8
   device_preview: 1.2.0
   expandable_page_view: ^1.0.17
@@ -17,6 +19,9 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^9.1.1
   flutter_svg: ^2.2.2
+  pdf: ^3.10.8
+  printing: ^5.14.3
+  share_plus: ^10.0.2
   shared_preferences: 2.5.3
   shimmer: ^3.0.0
 
