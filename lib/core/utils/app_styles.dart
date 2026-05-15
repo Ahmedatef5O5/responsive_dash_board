@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 abstract class AppStyles {
   static TextStyle styleRegular16(context) {
     return TextStyle(
-      color: const Color(0xff064060),
+      // color: const Color(0xff064060),
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w400,
@@ -85,7 +86,8 @@ abstract class AppStyles {
 
   static TextStyle styleRegular14(context) {
     return TextStyle(
-      color: const Color(0xffaaaaaa),
+      // color: const Color(0xffaaaaaa),
+      color: Theme.of(context).textTheme.bodyMedium?.color,
       fontSize: getResponsiveFontSize(context, fontSize: 14),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w400,

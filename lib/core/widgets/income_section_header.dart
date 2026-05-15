@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../features/dashboard/presentation/cubit/dashboard_cubit.dart';
-import '../../features/dashboard/presentation/cubit/dashboard_state.dart';
+import '../../features/dashboard/presentation/cubits/dashboard_cubit/dashboard_cubit.dart';
+import '../../features/dashboard/presentation/cubits/dashboard_cubit/dashboard_state.dart';
 import '../utils/app_styles.dart';
 
 class IncomeSectionHeader extends StatelessWidget {

@@ -58,7 +58,8 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
           titleStyle: AppStyles.styleMedium16(
             context,
           ).copyWith(color: activeIndex == 2 ? null : Colors.white),
-          color: const Color(0xff064060),
+          // color: const Color(0xff064060),
+          color: Theme.of(context).colorScheme.primary,
         ),
         PieChartSectionData(
           radius: activeIndex == 3 ? 50 : 40,

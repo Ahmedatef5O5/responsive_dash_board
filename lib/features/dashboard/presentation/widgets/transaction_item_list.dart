@@ -1,5 +1,5 @@
-import 'package:finDashBoard/features/dashboard/presentation/cubit/dashboard_cubit.dart';
-import 'package:finDashBoard/features/dashboard/presentation/cubit/dashboard_state.dart';
+import 'package:finDashBoard/features/dashboard/presentation/cubits/dashboard_cubit/dashboard_cubit.dart';
+import 'package:finDashBoard/features/dashboard/presentation/cubits/dashboard_cubit/dashboard_state.dart';
 import 'package:finDashBoard/features/dashboard/presentation/widgets/transaction_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

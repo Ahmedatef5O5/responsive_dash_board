@@ -9,20 +9,23 @@ class TransactionItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 0,
-      color: const Color(0xfffafafa),
+      // color: const Color(0xfffafafa),
+      color: Theme.of(context).cardColor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: ListTile(
         title: Text(
           transactionModel.title,
-          style: AppStyles.styleBold16(
-            context,
-          ).copyWith(color: const Color(0xff064060)),
+          style: AppStyles.styleBold16(context).copyWith(
+            // color: const Color(0xff064060)
+            color: Theme.of(context).colorScheme.primary,
+          ),
         ),
         subtitle: Text(
           transactionModel.subTitle,
-          style: AppStyles.styleRegular16(
-            context,
-          ).copyWith(color: const Color(0xffaaaaaa)),
+          style: AppStyles.styleRegular16(context).copyWith(
+            // color: const Color(0xffaaaaaa)
+            color: Theme.of(context).textTheme.bodyMedium?.color,
+          ),
         ),
         trailing: Text(
           transactionModel.amount,
