@@ -1,8 +1,8 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:finDashBoard/core/theme/app_theme.dart';
 import 'package:finDashBoard/features/dashboard/presentation/cubits/dashboard_cubit/dashboard_cubit.dart';
-import 'package:finDashBoard/features/dashboard/presentation/cubits/theme_cubit/cubit/theme_cubit.dart';
-import 'package:finDashBoard/features/dashboard/presentation/cubits/theme_cubit/cubit/theme_state.dart';
+import 'package:finDashBoard/features/dashboard/presentation/cubits/theme_cubit/theme_cubit.dart';
+import 'package:finDashBoard/features/dashboard/presentation/cubits/theme_cubit/theme_state.dart';
 import 'package:finDashBoard/features/dashboard/presentation/views/dash_board_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -32,7 +32,6 @@ class FinDashApp extends StatelessWidget {
             theme: AppTheme.light,
             darkTheme: AppTheme.dark,
             themeMode: themeState.isDark ? ThemeMode.dark : ThemeMode.light,
-
             home: DashBoardView(),
           );
         },
